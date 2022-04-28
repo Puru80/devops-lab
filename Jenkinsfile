@@ -1,15 +1,15 @@
 pipeline{
     agent any
     stages{
-        stage('Testing'){
-            steps{
-                echo 'Running Tests'
-                bat 'python3 labs.py'
-            }
-        }
         stage('Build'){
             steps{
                 echo 'Building files'
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'Running Tests'
+                sh 'python labs.py'
             }
         }
     }
