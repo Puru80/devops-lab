@@ -1,19 +1,16 @@
 pipeline{
-    agent { 
-        docker { 
-            image 'python:3.10.1-alpine' 
-        } 
-    }
+    agent any
     stages {
+        stage('Testing') {
+            steps {
+                echo 'Running Tests'
+                sh 'mvn test'
+            }
+        }
         stage('build') {
             steps {
                 echo 'Building files'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'Running Tests'
-                bat 'python labs.py'
+                sh 'mav package'
             }
         }
     }
