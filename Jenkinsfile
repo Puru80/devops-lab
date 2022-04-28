@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    
+
     stages {
         stage('Testing') {
             steps {
@@ -10,6 +10,7 @@ pipeline{
         stage('Build') {
             steps {
                 echo 'Building jar files...'
+                sh 'mvn --version'
                 bat 'javac Test.java'
                 bat 'java Test'
             }
