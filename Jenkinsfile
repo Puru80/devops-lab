@@ -1,14 +1,14 @@
-Pipeline{
-    agent only
-    Stages{
-        Stage('Testing'){
-            Steps{
+pipeline{
+    agent any
+    stages{
+        stage('Testing'){
+            steps{
                 echo 'Running Tests'
                 bat 'python labs.py'
             }
         }
-        Stage('Build'){
-            Steps{
+        stage('Build'){
+            steps{
                 echo 'Building files'
             }
         }
