@@ -7,10 +7,10 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage('build') {
+        stage('Build') {
             steps {
-                echo 'Building files'
-                sh 'mav package'
+                echo 'Building jar files...'
+                sh 'mvn package'
             }
         }
     }
