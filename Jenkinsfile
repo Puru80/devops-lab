@@ -10,7 +10,7 @@ pipeline{
         stage('Build') {
             steps {
                 echo 'Building jar files...'
-                sh 'mvn --version'
+                echo 'mvn --version'
                 bat 'javac Test.java'
                 bat 'java Test'
             }
