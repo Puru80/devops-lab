@@ -4,7 +4,7 @@ pipeline{
         stage('Testing'){
             steps{
                 echo 'Running Tests'
-                bat 'python labs.py'
+                bat 'python3 labs.py'
             }
         }
         stage('Build'){
