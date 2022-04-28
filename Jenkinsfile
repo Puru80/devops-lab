@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    
     stages {
         stage('Testing') {
             steps {
@@ -9,8 +10,8 @@ pipeline{
         stage('Build') {
             steps {
                 echo 'Building jar files...'
-                sh 'javac Test.java'
-                sh 'java Test'
+                bat 'javac Test.java'
+                bat 'java Test'
             }
         }
     }
