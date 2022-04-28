@@ -13,7 +13,7 @@ pipeline{
         stage('test') {
             steps {
                 echo 'Running Tests'
-                sh 'python labs.py'
+                bat 'python labs.py'
             }
         }
     }
